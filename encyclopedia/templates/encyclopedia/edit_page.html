@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+New_page
+{% endblock %}
+
+{% block body %}
+   <h2>Редагування статті: {{ title }}</h2>
+
+   <form action="/saveEdited" method="post">
+   
+      {% csrf_token %}
+      <div>
+        
+            {{ editForm }}
+         
+      </div>
+   
+      <p><input type="submit" value="Зберегти зміни"></p>
+   </form>
+   
+{% endblock %}

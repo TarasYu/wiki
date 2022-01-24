@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+New_page
+{% endblock %}
+
+{% block body %}
+
+      <div class="save_page">
+         <h2>Стаття з назвою "{{title }}" вже існує.</h2>
+      </div>
+      <div>
+         <a href="" onClick="window.history.back();return false;">Повернутись до статті</a>
+         
+      </div>
+      <div>
+         <a href="http://127.0.0.1:8000/">Скасувати</a>
+      
+      </div>
+
+
+{% endblock %}

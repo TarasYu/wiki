@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+New_page
+{% endblock %}
+
+{% block body %}
+
+<h2>Вікіпедія не має статті з цією назвою</h2>
+<ul>
+
+   <li><a href="{% url 'NewPage' %}?q={{ title }} ">Бажаєте створити статтю з назвою "{{ title }}"</a></li>
+   <li><a href="http://127.0.0.1:8000/">Скасувати</a></li>
+
+</ul>
+{% endblock %}

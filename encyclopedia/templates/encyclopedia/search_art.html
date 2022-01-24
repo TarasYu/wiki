@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{{search}}
+{% endblock %}
+
+{% block body %}
+   {% if search %}       
+      <h2>Можливо, Ви мали на увазі:</h2>
+      <div class="article">                  
+         <ul>
+            {% for entry in search %}
+            <li><a href="{{entry}}">{{ entry }}</a></li>
+            {% endfor %}
+         </ul>
+      </div>         
+   {% endif %}
+   
+{% endblock %}

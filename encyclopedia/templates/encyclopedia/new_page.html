@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+   New_page
+{% endblock %}
+
+{% block body %}
+
+   <form action="new_page" method="post">
+
+      {% csrf_token %}
+      <div>
+         <table>
+            {{ pageForm }}
+         </table>
+      </div>
+      
+      <p style="padding-left: 67px;"><input type="submit" value="Зберегти статтю"></p>
+   </form>
+
+{% endblock %}
+   
+   
