@@ -25,13 +25,13 @@
                 </form>
                 </div>
                 <div>
-                    <a href="http://127.0.0.1:8000/">Головна сторінка</a>
+                    <a href="{% url 'index' %}">Головна сторінка</a>
                 </div>
                 <div>
-                    <a href="http://127.0.0.1:8000/new_page">Створити нову статтю</a>
+                    <a href="{% url 'NewPage' %}">Створити нову статтю</a>
                 </div>
                 <div>
-                    <a href="http://127.0.0.1:8000/random_page">Випадкова стаття</a>
+                    <a href="{% url 'random_page' %}">Випадкова стаття</a>
                     
                 </div>
               

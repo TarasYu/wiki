@@ -10,7 +10,7 @@ New_page
 <ul>
 
    <li><a href="{% url 'NewPage' %}?q={{ title }} ">Бажаєте створити статтю з назвою "{{ title }}"</a></li>
-   <li><a href="http://127.0.0.1:8000/">Скасувати</a></li>
+   <li><a href="{% url 'index' %}">Скасувати</a></li>
 
 </ul>
 {% endblock %}
