@@ -4,13 +4,14 @@ from django import forms
 from . import util
 from random import choice
 from markdown2 import markdown
-from django.core import validators
+
+
 
 
 class SearchForm(forms.Form):
     search = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'searchform'}), label="Пошук Вікі", validators = [validators.validate_slug])
-  
+        attrs={'class': 'searchform'}), label="Пошук Вікі")
+    
 
 class NewPageForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={'size': '50'}), label="Назва")
@@ -32,6 +33,7 @@ def article(request, title):
       form = SearchForm(request.POST)
       if form.is_valid():
          title = form.cleaned_data["search"]
+         
          if title in util.list_entries():
             return render(request, "encyclopedia/article.html", {
                 "article": markdown(util.get_entry(title)),
@@ -49,7 +51,7 @@ def article(request, title):
                 "form": SearchForm()
             })
       else:
-         return(request, "encyclopedia/article.html", {
+         return render(request, "encyclopedia/article.html", {
              "form": form
          })
    if util.get_entry(title):
